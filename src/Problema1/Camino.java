@@ -39,8 +39,8 @@ public class Camino {
 	public List<Coordenada> buscar(Coordenada no, Coordenada se){
 		List<Coordenada> lista = new ArrayList<>();
 		for(Coordenada unaCoordenada: this.listaCoordenadas) {
-			if((unaCoordenada.getLatitud() < se.getLatitud() && unaCoordenada.getLatitud() > no.getLatitud())
-			&& (unaCoordenada.getLongitud() > se.getLongitud() && unaCoordenada.getLongitud() < no.getLongitud()))
+			if(unaCoordenada.getLatitud() < se.getLatitud() && unaCoordenada.getLatitud() > no.getLatitud()
+			&& unaCoordenada.getLongitud() > se.getLongitud() && unaCoordenada.getLongitud() < no.getLongitud())
 			{
 				lista.add(unaCoordenada);
 				}
