@@ -10,6 +10,10 @@ public class App {
 
 		Pedido pedido1 = new PedidoBasico(false);
 		Pedido pedido2 = new PedidoPremium();
+		Tramite tr1 = new Tramite("Pagar API","Mendoza 3660",1240.5);
+		Tramite tr2 = new Tramite("Pagar patente","San Martin 1540", 1240.5);
+		
+		Cadete cad1 = new Cadete();
 		
 		System.out.println("Se agrega producto a pedido1: "+pedido1.agregarProducto(prod1));
 		System.out.println("Se agrega producto a pedido1: "+pedido1.agregarProducto(prod2));
@@ -20,6 +24,18 @@ public class App {
 		System.out.println("Precio pedido1: "+pedido1.precio());
 		System.out.println("Comision pedido1: "+pedido1.comision());
 		
+		for(int i=0; i<12; i++) pedido2.agregarProducto(prod1);
+		System.out.println("Precio pedido2: "+pedido2.precio());
+		System.out.println("Comision pedido2: "+pedido2.comision());
+		System.out.println("Comision tramite1: "+tr1.comision());
+		System.out.println("Comision tramite2: "+tr2.comision());
+		
+		cad1.agregarComisionable(pedido1);
+		cad1.agregarComisionable(pedido2);
+		cad1.agregarComisionable(tr1);
+		cad1.agregarComisionable(tr2);
+		System.out.println("Comisiones: "+cad1.comisiones());
+	
 	}
 
 }
